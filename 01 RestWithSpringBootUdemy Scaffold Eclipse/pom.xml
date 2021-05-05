@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+
+  <!-- 1- Adicionar a compatibilidade ao Spring Boot  -->
+  <parent>
+  	<groupId>org.springframework.boot</groupId>
+  	<artifactId>spring-boot-starter-parent</artifactId>
+  	<version>2.1.3.RELEASE</version>
+  </parent>
+  
+  <groupId>br.com.erudio</groupId>
+  <artifactId>rest-with-springboot-udemy</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <!-- 2- Adicionar Empacotamento -->
+  <packaging>jar</packaging>
+  
+  <!-- 3- Adicionar a versão do Java -->
+  <properties>
+  	<!-- OPCIONAL - Adicionar o Encoding -->
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>11</java.version>
+  </properties>
+
+	<!-- 4- Adicionar as dependências do Spring Boot -->
+	<dependencies>
+		<!-- Para trabalhar com REST no SpringBoot, é necessário ao menos as bibliotecas abaixo 
+		- spring-boot-starter-data-rest
+		- spring-boot-starter-test
+		-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+	</dependencies>
+	
+	<!-- 5- Adicionar um plugin na tag build para compilar e empacotar corretamente o projeto-->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
