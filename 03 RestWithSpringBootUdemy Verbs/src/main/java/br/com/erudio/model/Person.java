@@ -2,14 +2,33 @@ package br.com.erudio.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "person") //força o nome da tabela a ficar minusculo na hora do hibernate criar automaticamente
 public class Person implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)//auto increment
 	private Long id;
+	
+	@Column(name = "first_name", nullable = false, length = 80) //sobrescrever nome da tabela, not null, tamanho do campo
 	private String firstName;
+	
+	@Column(name = "last_name", nullable = false, length = 80)
 	private String lastName;
+	
+	@Column (nullable = false, length = 100)
 	private String address;
+	
+	@Column (nullable = false, length = 6)
 	private String gender;
 	
 	public Person() {
